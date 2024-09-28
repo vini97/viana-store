@@ -51,4 +51,4 @@ O projeto utiliza um tema futurístico com as seguintes características:
 Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato: 
 - **Desenvolvedor**: Vinicius Viana
 
-- **LinkedIn**: [vinicius.vs](https://www.linkedin.com/in/vinicius-vs)
+- **LinkedIn**: [vinicius-vs](https://www.linkedin.com/in/vinicius-vs)
