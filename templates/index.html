@@ -1,0 +1,115 @@
+{{define "Index"}}
+{{template "_head"}}
+{{template "_menu"}}
+
+<body style="background-color: #0d0d0d; font-family: 'Poppins', sans-serif; color: #e0e0e0;">
+    <div class="container mt-5">
+        <section class="card shadow-lg"
+            style="border-radius: 15px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+            <div class="card-header text-center"
+                style="border-radius: 15px 15px 0 0; background: linear-gradient(90deg, #0575e6); color: #fff;">
+                <h2 style="color: #00f260; text-shadow: 0 0 10px rgba(0, 242, 96, 0.7);">Lista de Produtos</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover mb-0" style="color: #e0e0e0;">
+                    <thead style="background: rgba(0, 0, 0, 0.8); color: #00f260;">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .}}
+                        <tr style="transition: background 0.3s ease;">
+                            <td>{{.Nome}}</td>
+                            <td>{{.Descricao}}</td>
+                            <td>R$ {{printf "%.2f" .Preco}}</td>
+                            <td>{{.Quantidade}}</td>
+                            <td>
+                                <a href="/edit?id={{.Id}}" class="btn btn-sm btn-info mr-2"
+                                    style="background: #0575e6; border: none; color: #fff; box-shadow: 0 0 10px rgba(5, 117, 230, 0.7);">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <button onclick="onDelete('{{.Id}}')" class="btn btn-sm btn-danger"
+                                    style="background: #ff416c; border: none; color: #fff; box-shadow: 0 0 10px rgba(255, 65, 108, 0.7);">
+                                    <i class="fas fa-trash-alt"></i> Deletar
+                                </button>
+                            </td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <div class="card-footer text-center mt-3">
+            <a href="/new" class="btn btn-lg btn-success shadow"
+                style="background: #00f260; border: none; color: #fff; box-shadow: 0 0 15px rgba(0, 242, 96, 0.7);">
+                <i class="fas fa-plus-circle"></i> Criar novo produto
+            </a>
+        </div>
+    </div>
+
+    <!-- Adicionando animação ao deletar -->
+    <script>
+        function onDelete(id) {
+            let resposta = confirm("Tem certeza que deseja deletar esse produto?");
+            if (resposta) {
+                window.location = "/delete?id=" + id;
+            }
+        }
+    </script>
+
+    <!-- Adicionando ícones do FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Estilos adicionais para o layout futurístico -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 242, 96, 0.2);
+            /* Cor de fundo neon ao passar o mouse */
+            color: #e0e0e0;
+            /* Mantém a cor do texto */
+        }
+
+        .btn-info:hover,
+        .btn-danger:hover,
+        .btn-success:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+
+        .btn-info,
+        .btn-danger,
+        .btn-success {
+            transition: transform 0.2s ease;
+        }
+
+        .card {
+            box-shadow: 0 0 20px rgba(0, 242, 96, 0.2), 0 0 30px rgba(5, 117, 230, 0.2);
+        }
+
+        .card-header h2 {
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 242, 96, 0.7), 0 0 20px rgba(0, 242, 96, 0.5);
+            }
+
+            to {
+                text-shadow: 0 0 20px rgba(0, 242, 96, 1), 0 0 30px rgba(0, 242, 96, 0.7);
+            }
+        }
+    </style>
+</body>
+
+</html>
+{{end}}

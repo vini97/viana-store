@@ -1,0 +1,116 @@
+{{define "Edit"}}
+{{template "_head"}}
+{{template "_menu"}}
+
+<body style="background-color: #0d0d0d; font-family: 'Poppins', sans-serif; color: #e0e0e0;">
+    <div class="container mt-5">
+        <div class="jumbotron jumbotron-fluid shadow-lg"
+            style="border-radius: 15px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+            <div class="container text-center">
+                <h1 class="display-5" style="color: #00f260; text-shadow: 0 0 10px rgba(0, 242, 96, 0.7);">Editando
+                    Produto</h1>
+                <p class="lead" style="color: #e0e0e0;">Insira os dados para atualizar ou editar</p>
+            </div>
+        </div>
+        <form method="POST" action="update">
+            <input type="hidden" name="id" value="{{.Id}}">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="nome" style="color: #00f260;">Nome:</label>
+                        <input type="text" name="nome" class="form-control" value="{{.Nome}}"
+                            placeholder="Digite o nome do produto" required
+                            style="background-color: rgba(255, 255, 255, 0.1); color: #e0e0e0; border: none;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="descricao" style="color: #00f260;">Descrição:</label>
+                        <input type="text" name="descricao" class="form-control" value="{{.Descricao}}"
+                            placeholder="Digite a descrição do produto" required
+                            style="background-color: rgba(255, 255, 255, 0.1); color: #e0e0e0; border: none;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="preco" style="color: #00f260;">Preço:</label>
+                        <input type="number" name="preco" class="form-control" step="0.01" value="{{.Preco}}"
+                            placeholder="0.00" required
+                            style="background-color: rgba(255, 255, 255, 0.1); color: #e0e0e0; border: none;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="quantidade" style="color: #00f260;">Quantidade:</label>
+                        <input type="number" name="quantidade" class="form-control" value="{{.Quantidade}}"
+                            placeholder="0" required
+                            style="background-color: rgba(255, 255, 255, 0.1); color: #e0e0e0; border: none;">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" value="salvar" class="btn btn-lg btn-success shadow"
+                    style="background: #00f260; border: none; color: #fff; box-shadow: 0 0 15px rgba(0, 242, 96, 0.7);">
+                    <i class="fas fa-save"></i> Atualizar
+                </button>
+                <a class="btn btn-lg btn-info shadow ml-3" href="/"
+                    style="background: #0575e6; border: none; color: #fff; box-shadow: 0 0 15px rgba(5, 117, 230, 0.7);">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Adicionando ícones do FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Estilos adicionais para o layout futurístico -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 10px rgba(0, 242, 96, 0.7);
+            border-color: #00f260;
+        }
+
+        .btn-success:hover,
+        .btn-info:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+
+        .btn-success,
+        .btn-info {
+            transition: transform 0.2s ease;
+        }
+
+        .jumbotron {
+            box-shadow: 0 0 20px rgba(0, 242, 96, 0.2), 0 0 30px rgba(5, 117, 230, 0.2);
+        }
+
+        h1 {
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 242, 96, 0.7), 0 0 20px rgba(0, 242, 96, 0.5);
+            }
+
+            to {
+                text-shadow: 0 0 20px rgba(0, 242, 96, 1), 0 0 30px rgba(0, 242, 96, 0.7);
+            }
+        }
+    </style>
+</body>
+
+</html>
+{{end}}

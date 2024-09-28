@@ -1,0 +1,57 @@
+{{define "About"}}
+{{template "_head"}}
+{{template "_menu"}}
+
+<body style="background-color: #0d0d0d; font-family: 'Poppins', sans-serif; color: #e0e0e0;">
+    <div class="container mt-5">
+        <section class="card shadow-lg"
+            style="border-radius: 15px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+            <div class="card-header text-center"
+                style="border-radius: 15px 15px 0 0; background: linear-gradient(90deg, #0575e6); color: #fff;">
+                <h2 style="color: #00f260; text-shadow: 0 0 10px rgba(0, 242, 96, 0.7);">Sobre o Projeto</h2>
+            </div>
+            <div class="card-body text-center">
+                <p class="lead" style="color: #e0e0e0;">Este projeto foi desenvolvido para gerenciar produtos de forma
+                    simples e eficiente.</p>
+                <p>Desenvolvido por: <strong>Vinicius Viana</strong></p>
+                <p>Conecte-se comigo no <a href="https://www.linkedin.com/in/vinicius-vs" target="_blank"
+                        style="color: #0575e6; text-shadow: 0 0 10px rgba(5, 117, 230, 0.7);">LinkedIn</a>.</p>
+            </div>
+        </section>
+    </div>
+    <!-- Adicionando ícones do FontAwesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Estilos adicionais para o layout futurístico -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+        }
+
+        .card {
+            box-shadow: 0 0 20px rgba(0, 242, 96, 0.2), 0 0 30px rgba(5, 117, 230, 0.2);
+        }
+
+        .card-header h2 {
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 242, 96, 0.7), 0 0 20px rgba(0, 242, 96, 0.5);
+            }
+
+            to {
+                text-shadow: 0 0 20px rgba(0, 242, 96, 1), 0 0 30px rgba(0, 242, 96, 0.7);
+            }
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</body>
+
+</html>
+{{end}}
