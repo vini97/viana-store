@@ -52,3 +52,8 @@ Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em c
 - **Desenvolvedor**: Vinicius Viana
 
 - **LinkedIn**: [vinicius-vs](https://www.linkedin.com/in/vinicius-vs)
+
+## 🎥 Demonstração 
+![
+Descrição do GIF
+](./demo_viana_store.gif)
