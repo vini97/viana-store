@@ -54,6 +54,5 @@ Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em c
 - **LinkedIn**: [vinicius-vs](https://www.linkedin.com/in/vinicius-vs)
 
 ## 🎥 Demonstração 
-![
-Descrição do GIF
-](./demo_viana_store.gif)
+
+https://github.com/user-attachments/assets/5ded16b1-e39d-4c30-b969-c4d3ea8ac611
